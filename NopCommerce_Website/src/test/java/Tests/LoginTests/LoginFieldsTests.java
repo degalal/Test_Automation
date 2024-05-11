@@ -8,10 +8,10 @@ import org.testng.annotations.Test;
 public class LoginFieldsTests extends BaseTests {
 
 
-    @Test(priority = 2)
+    @Test(dependsOnGroups = "registration")
     public void testSuccessfulLogin(){
         LoginPage loginPage = homePage.clickOnLogin();
-        loginPage.setUserEmail("deena.galal2806@gmail.com");
+        loginPage.setUserEmail("deena.galal2080@gmail.com");
         loginPage.setUserPassword("testautomation");
         loginPage.clickLoginButton();
         Assert.assertEquals("https://demo.nopcommerce.com/",driver.getCurrentUrl() );

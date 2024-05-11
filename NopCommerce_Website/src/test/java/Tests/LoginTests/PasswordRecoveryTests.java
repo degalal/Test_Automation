@@ -11,7 +11,7 @@ public class PasswordRecoveryTests extends BaseTests {
     public void testSuccessfulEmailRecovery(){
        LoginPage loginPage = homePage.clickOnLogin();
        loginPage.clickForgotPassword();
-       loginPage.setUserEmail("deena.galal2806@gmail.com");
+       loginPage.setUserEmail("deena.galal2080@gmail.com");
        loginPage.clickRecover();
         Assert.assertEquals(loginPage.verifyPasswordRecovery(),"Email with instructions has been sent to you.");
 

@@ -72,41 +72,41 @@ public void confirmPassword(String pass){
 
 
 public String checkSuccessfulRegisterMsg(){
-     return get_ValidationText(successfulRegisterMsg);
+     return get_Text(successfulRegisterMsg);
 
 }
 
 public String checkExistingEmail(){
-        return get_ValidationText(existingEmailError);
+        return get_Text(existingEmailError);
     }
 
     public String checkEmailError(){
-        return get_ValidationText(emailRequiredError);
+        return get_Text(emailRequiredError);
 
     }
 
 
 
 public String checkPassErrorMsg(){
-     return get_ValidationText(passErrorMsg);
+     return get_Text(passErrorMsg);
 }
 
     public String checkConfirmPassError(){
-        return get_ValidationText(confirmPassError);
+        return get_Text(confirmPassError);
 
     }
 
     public String checkPassRequired(){
-     return get_ValidationText(passRequiredError);
+     return get_Text(passRequiredError);
     }
 
 
     public String checkFirstNameErrorMsg(){
-        return get_ValidationText(firstNameRequiredError);
+        return get_Text(firstNameRequiredError);
     }
 
     public String checkLastNameErrorMsg(){
-        return get_ValidationText(lastNameRequiredError);
+        return get_Text(lastNameRequiredError);
     }
 
 

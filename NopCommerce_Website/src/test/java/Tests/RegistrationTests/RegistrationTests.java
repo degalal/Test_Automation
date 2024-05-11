@@ -12,12 +12,14 @@ import static Browser.BrowserAction.click;
 
 public class RegistrationTests extends BaseTests {
 
-    @Test(priority = 1)
+    @Test(groups = "registration")
+
+
     public void  testSuccessfulRegistration(){
        RegistrationPage registrationPage = homePage.clickOnRegister();
        registrationPage.setFirstName("deee");
        registrationPage.setLastName("lkkk");
-       registrationPage.setEmail("deena.galal2806@gmail.com");
+       registrationPage.setEmail("deena.galal208900@gmail.com");
        registrationPage.setPassword("testautomation");
        registrationPage.confirmPassword("testautomation");
        click(By.id("register-button"));

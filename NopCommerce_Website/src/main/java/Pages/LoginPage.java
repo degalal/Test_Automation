@@ -40,11 +40,11 @@ public class LoginPage {
     }
 
     public String checkUserFound(){
-      return   get_ValidationText(notFound);
+      return   get_Text(notFound);
     }
 
     public String checkEmailError(){
-        return get_ValidationText(Email_error);
+        return get_Text(Email_error);
     }
 
     public void clickForgotPassword(){
@@ -57,7 +57,7 @@ public class LoginPage {
     }
 
     public String verifyPasswordRecovery(){
-        return get_ValidationText(passRecovery);
+        return get_Text(passRecovery);
     }
 
 

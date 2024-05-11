@@ -42,10 +42,6 @@ public class BaseTests {
     public void recordFailure(ITestResult result){
         if(ITestResult.FAILURE == result.getStatus())
         {
-          /*  JavascriptExecutor js = (JavascriptExecutor) driver;
-            WebElement element = driver.findElement(By.cssSelector("div:nth-child(1) > div > div.details > h2 > a"));
-            js.executeScript("arguments[0].scrollIntoView();", element);*/
-
             var camera = (TakesScreenshot)driver;
             File screenshot = camera.getScreenshotAs(OutputType.FILE);
             try{
@@ -58,7 +54,7 @@ public class BaseTests {
 
     @AfterClass
     public void tearDown(){
-        //  driver.quit();
+         // driver.quit();
     }
 
 

@@ -1,7 +1,6 @@
 package Browser;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -14,16 +13,37 @@ public class BrowserAction {
         BrowserAction.driver = driver;
     }
 
-    public static void clickOn(By locator, By expected){
 
-        driver.findElement(locator).click();
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(expected));
+
+    public static void clickOn(By locator, By expected) {
+        try {
+            driver.findElement(locator).click();
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+            wait.until(ExpectedConditions.visibilityOfElementLocated(expected));
+
+        } catch (NoSuchElementException e) {
+            System.out.println("Element not found: " + e.getMessage());
+        }
+    }
+
+
+
+    public static void scroll(By locator){
+
+        try {
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+            wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+            WebElement element = driver.findElement(locator);
+            js.executeScript("arguments[0].scrollIntoView();", element);
+
+        } catch (NoSuchElementException e) {
+            System.out.println("Element not found: " + e.getMessage());
+        }
 
 
 
     }
-
 
 
     public static void click(By locator){
@@ -33,16 +53,12 @@ public class BrowserAction {
 
 
 
-    public static String  get_ValidationText(By ErrorMsg){
-        return driver.findElement(ErrorMsg).getText();
+    public static String  get_Text(By Element){
+        return driver.findElement(Element).getText();
     }
 
     public static void setData(By Locator , String data){
         driver.findElement(Locator).sendKeys(data);
-    }
-
-    public static String  get_ProductsText(By productName){
-        return driver.findElement(productName).getText();
     }
 
 
